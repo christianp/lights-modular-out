@@ -1,0 +1,45 @@
+html {
+    font-size: 24px;
+    font-family: sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+body > * {
+    flex: 0 0 1;
+    align-self: center;
+}
+input {
+    margin-left: 0.5rem;
+}
+button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+}
+
+.cell {
+    width: 2em;
+    height: 2em;
+    border: 1px solid;
+    text-align: center;
+    cursor: pointer;
+}
+.cell::before{    content: attr(data-state); }
+
+.cell[data-state="0"] { background: black; color: white; }
+.cell[data-state="1"] { background: yellow; color: hsl(300,100%,50%); }
+.cell[data-state="2"] { background: blue; color: hsl(120, 100%, 50%); }
+
+
+.gradient .cell[data-state="0"] { background: hsl(60,100%,0%); }
+.gradient .cell[data-state="1"] { background: hsl(60,100%,10%); }
+.gradient .cell[data-state="2"] { background: hsl(60,100%,20%); }
+.gradient .cell[data-state="3"] { background: hsl(60,100%,30%); }
+.gradient .cell[data-state="4"] { background: hsl(60,100%,40%); }
+.gradient .cell[data-state="5"] { background: hsl(60,100%,50%); }
+.gradient .cell[data-state="6"] { background: hsl(60,100%,60%); }
+.gradient .cell[data-state="7"] { background: hsl(60,100%,70%); }
+.gradient .cell[data-state="8"] { background: hsl(60,100%,80%); }
+.gradient .cell[data-state="9"] { background: hsl(60,100%,90%); }
+
