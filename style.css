@@ -32,16 +32,16 @@ button {
 .cell[data-state="2"] { background: blue; color: hsl(120, 100%, 50%); }
 
 
-.gradient .cell[data-state="0"] { background: hsl(60,100%,0%); }
-.gradient .cell[data-state="1"] { background: hsl(60,100%,10%); }
-.gradient .cell[data-state="2"] { background: hsl(60,100%,20%); }
-.gradient .cell[data-state="3"] { background: hsl(60,100%,30%); }
-.gradient .cell[data-state="4"] { background: hsl(60,100%,40%); }
-.gradient .cell[data-state="5"] { background: hsl(60,100%,50%); }
-.gradient .cell[data-state="6"] { background: hsl(60,100%,60%); }
-.gradient .cell[data-state="7"] { background: hsl(60,100%,70%); }
-.gradient .cell[data-state="8"] { background: hsl(60,100%,80%); }
-.gradient .cell[data-state="9"] { background: hsl(60,100%,90%); }
+.gradient .cell[data-state="0"] { background: #000000; }
+.gradient .cell[data-state="1"] { background: #762a83; }
+.gradient .cell[data-state="2"] { background: #9970ab; }
+.gradient .cell[data-state="3"] { background: #c2a5cf; }
+.gradient .cell[data-state="4"] { background: #e7d4e8; }
+.gradient .cell[data-state="5"] { background: #d9f0d3; }
+.gradient .cell[data-state="6"] { background: #a6dba0; }
+.gradient .cell[data-state="7"] { background: #5aae61; }
+.gradient .cell[data-state="8"] { background: #1b7837; }
+.gradient .cell[data-state="9"] { background: #00441b; }
 
 
 footer {

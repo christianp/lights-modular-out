@@ -114,6 +114,7 @@ function parse_settings() {
     let size = document.getElementById('input-size').value;
     let base = document.getElementById('input-base').value;
     if (state && state.length == size * size) {
+        console.log(state);
         state = state.split('').map(x => parseInt(x));
         if (state.some(isNaN)) {
             return;
@@ -124,11 +125,13 @@ function parse_settings() {
             }
         }
     }
+    game.update();
 }
-init_game();
 
 if (window.location && window.location.search) {
     parse_settings();
+} else {
+    init_game();
 }
 
 for (let id of ['input-size', 'input-base']) {
