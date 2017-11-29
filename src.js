@@ -99,10 +99,14 @@ function parse_settings() {
         const [key,value] = bit.map(decodeURIComponent);
         switch(key) {
             case 'size':
-                document.getElementById('input-size').value = value;
+                if(!isNaN(parseInt(value))) {
+                    document.getElementById('input-size').value = value;
+                }
                 break;
             case 'base':
-                document.getElementById('input-base').value = value;
+                if(!isNaN(parseInt(value))) {
+                    document.getElementById('input-base').value = value;
+                }
                 break;
             case 'state':
                 state = value;
