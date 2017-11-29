@@ -2,11 +2,11 @@ html {
     font-size: 24px;
     font-family: sans-serif;
 }
-body {
+main, body {
     display: flex;
     flex-direction: column;
 }
-body > * {
+main > *, body > * {
     flex: 0 0 1;
     align-self: center;
 }
@@ -43,3 +43,8 @@ button {
 .gradient .cell[data-state="8"] { background: hsl(60,100%,80%); }
 .gradient .cell[data-state="9"] { background: hsl(60,100%,90%); }
 
+
+footer {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+}
