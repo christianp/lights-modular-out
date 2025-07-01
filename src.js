@@ -88,6 +88,16 @@ function init_game() {
     return game;
 }
 
+function random_game() {
+    const game = init_game();
+    for(let x=0;x<game.size;x++) {
+        for(let y=0;y<game.size;y++) {
+            const n = Math.floor(Math.random() * game.base);
+            game.get_cell(x,y).set_state(n);
+        }
+    }
+}
+
 function parse_settings() {
     const bits = window.location.search.slice(1).split('&').map(x => x.split('='));
     let state;
@@ -139,3 +149,4 @@ for (let id of ['input-size', 'input-base']) {
 }
 
 document.getElementById('button-reset').addEventListener('click', init_game);
+document.getElementById('button-random').addEventListener('click', random_game);
