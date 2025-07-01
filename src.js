@@ -19,6 +19,7 @@ class Cell {
         this.element = element('td', { class: 'cell' });
         this.element.addEventListener('click', function () {
             game.click(x, y);
+            game.update();
         });
         this.set_state(0);
     }
@@ -66,13 +67,15 @@ class Game {
                 cell.increment();
             }
         }
-        this.update();
     }
     update() {
         if (window.location && window.history) {
             const bits = [['size', this.size], ['base', this.base], ['state', this.grid.map(r => r.cells.map(c => c.state).join('')).join('')]].map(b => b.map(encodeURIComponent).join('='));
             const base_url = [location.protocol, '//', location.host, location.pathname].join('');
-            window.history.replaceState({}, '', base_url + '?' + bits.join('&'));
+            try {
+                window.history.replaceState({}, '', base_url + '?' + bits.join('&'));
+            } catch(e) {
+            }
         }
     }
 };
@@ -93,9 +96,12 @@ function random_game() {
     for(let x=0;x<game.size;x++) {
         for(let y=0;y<game.size;y++) {
             const n = Math.floor(Math.random() * game.base);
-            game.get_cell(x,y).set_state(n);
+            for(let i=0;i<n;i++) {
+                game.click(x,y);
+            }
         }
     }
+    game.update();
 }
 
 function parse_settings() {
